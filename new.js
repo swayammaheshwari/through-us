@@ -8,10 +8,6 @@ const mongoose = require('mongoose');
 
 const app = express();
 
-let authorName = "req.body.authorNameR";
-let postTitle = "req.body.postTitleR";
-let postBody = "req.body.postBodyR";
-
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -49,9 +45,21 @@ app.post("/compose",(req,res)=>{
 app.get("/author",(req,res)=>{
     res.render("author");
 })
-app.get("/post",(req,res)=>{
-    res.render("post");
-})
+
+app.get("/posts/:postId", function(req, res){
+
+  const requestedPostId = req.params.postId;
+
+    Post.findOne({_id: requestedPostId}, function(err, post){
+      res.render("post", {
+        author:post.author,
+        title: post.title,
+        poster: post.content
+      });
+    });
+  });
+
+
 app.get("/compose",(req,res)=>{
     res.render("compose");
 })
