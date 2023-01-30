@@ -8,11 +8,20 @@
   },
   "author": "swayam",
   "license": "ISC",
+  "engines": {
+    "node": "16.15.1"
+  },
   "dependencies": {
     "body-parser": "^1.20.0",
+    "dotenv": "^16.0.1",
     "ejs": "^3.1.8",
     "express": "^4.18.1",
+    "express-session": "^1.17.3",
     "lodash": "^4.17.21",
-    "mongoose": "^6.4.4"
+    "mongoose": "^6.4.4",
+    "nodemailer": "^6.7.8",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^7.1.2"
   }
 }

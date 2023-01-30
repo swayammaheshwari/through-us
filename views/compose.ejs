@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>swayamTHOUGHT.com</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <style>
         body{
@@ -17,7 +17,7 @@
 </head>
 <body>
     <h1><span>WARNING:</span>This section can post directly to the page.</h1>
-    <h1>Compose</h1>
+    <h1>Blog post</h1>
     <form class="" action="/compose" method="post">
       <div class="form-group">
         <label>name of the author</label>
@@ -26,6 +26,19 @@
         <input class="form-control" type="text" name="postTitleR">
         <label>Post</label>
         <textarea class="form-control" name="postBodyR" rows="5" cols="30"></textarea>
+      </div>
+      <button class="btn btn-primary" type="submit" name="button">Publish</button>
+    </form>
+<hr>
+<h1>OR</h1>
+<h1>Line post</h1>
+<hr>
+    <form class="" action="/composeLine" method="post">
+      <div class="form-group">
+        <label>name of the author</label>
+        <input class="form-control" type="text" name="authorLine">
+        <label>Post</label>
+        <textarea class="form-control" name="bodyLine" rows="5" cols="30"></textarea>
       </div>
       <button class="btn btn-primary" type="submit" name="button">Publish</button>
     </form>
