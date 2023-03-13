@@ -1,7 +1,6 @@
 //jshint esversion:6
 require('dotenv').config();
 const express = require("express");
-const bodyParser = require("body-parser");
 const _ = require("lodash")
 const ejs = require("ejs");
 const mongoose = require('mongoose');
@@ -25,8 +24,8 @@ const transporter = nodemailer.createTransport({
 
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.json());
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
 
 app.use(session({
   secret:  process.env.SECRET,
@@ -210,8 +209,7 @@ app.post("/Contact",(req,res)=>{
       from:'dev.swayam@outlook.com',
       to: 'arjunsinghlahor189@gmail.com',
       subject: req.body.name,
-      text:(`Email: `+ req.body.email + "\n" + 
-      `message: ` + req.body.message),
+      text:(`Email: ${req.body.email}\nmessage: ${req.body.message}`),
   };
   transporter.sendMail(mailData, (error, info) => {
       if (error) {
