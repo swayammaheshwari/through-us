@@ -1,0 +1,13 @@
+import { NextApiRequest, NextApiResponse } from 'next';
+import { NextResponse } from 'next/server';
+
+export const GET = async (req: NextApiRequest,{ params }: { params: { id: string } }, res: NextApiResponse) => {
+  try {
+    const id =params.id;
+    console.log(id);
+
+    return NextResponse.json({ message: `Received name parameter: ${id}` });
+  } catch (error) {
+    return NextResponse.json({ message: 'Verification failed' });
+  }
+};
