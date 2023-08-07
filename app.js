@@ -10,6 +10,7 @@ const passportLocalMongoose = require("passport-local-mongoose");
 const nodemailer = require("nodemailer");
 
 const app = express();
+
 const d = new Date().toLocaleDateString();
 
 const transporter = nodemailer.createTransport({
