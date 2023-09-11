@@ -75,8 +75,7 @@ const SignIn = () => {
                   readOnly
                 />
                 <label className="form-check-label" htmlFor="form2Example31">
-                  {" "}
-                  Remember me{" "}
+                  Remember me
                 </label>
               </div>
             </div>
